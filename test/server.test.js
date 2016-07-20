@@ -5,17 +5,17 @@ var should = chai.should();
 
 chai.use(chaiHttp);
 
-describe('server tests', () => {
-it('should render index page', done => {
-  chai.request(server)
-    .get('/')
-    .end((err, res) => {
-        should.not.exist(err);
-        should.exist(res);
-        should.exist(res.type);
-        res.should.have.status(200);
-        res.type.should.equal('text/html');
+describe('Server tests', () => {
+  it('Should render index page', done => {
+    const okStatusCode = 200;
+    chai.request(server)
+      .get('/')
+      .end((err, res) => {
+          should.not.exist(err);
+          should.exist(res);
+          res.should.have.status(okStatusCode);
+          res.type.should.equal('text/html');
       done();
-    });
-})
+      });
+  })
 });
