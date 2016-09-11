@@ -1,17 +1,17 @@
 const webpack = require('webpack')
 const webpackDevMiddleware = require('webpack-dev-middleware')
 const webpackHotMiddleware = require('webpack-hot-middleware')
-const config = require('./webpack.config')
+const webpackConfig = require('./webpack.config')
 const express = require('express')
 
 const app = new express()
 const port = 3000
 
-const compiler = webpack(config)
+const compiler = webpack(webpackConfig)
 
 app.use(webpackDevMiddleware(compiler, {
      noInfo: true,
-     publicPath: config.output.publicPath
+     publicPath: webpackConfig.output.publicPath
 }))
 
 app.use(webpackHotMiddleware(compiler))
