@@ -1,11 +1,11 @@
 {
-  "name": "react-sampleapp",
+  "name": "makeitalive",
   "version": "1.0.0",
-  "description": "sample app",
+  "description": "small app to figure out how to modify images on-the-fly following some heuristical GameOfLife-like changes",
   "main": "index.js",
   "scripts": {
     "start": "node server.js",
-    "test": "mocha"
+    "test": "mocha --compilers js:babel-register"
   },
   "author": "Tony Ryzhikov",
   "license": "MIT",
